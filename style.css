@@ -1,0 +1,407 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #5ddfe8;
+
+  font-size: 10px;
+  transition: background 1s ease-in-out;
+}
+.bo-night {
+  background: #111;
+}
+/* stars */
+.stars {
+  position: relative;
+}
+.star {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  position: absolute;
+  animation: shining 2s infinite;
+}
+.left-1 {
+  top: 60px;
+  left: 100px;
+  bottom: 0;
+}
+.left-2 {
+  top: 160px;
+  left: 0px;
+  bottom: 0;
+}
+.left-3 {
+  top: 340px;
+  left: 230px;
+  bottom: 0;
+}
+.left-4 {
+  top: 340px;
+  left: -110px;
+  bottom: 0;
+}
+.left-5 {
+  top: 10px;
+  left: -180px;
+  bottom: 0;
+}
+.left-6 {
+  top: 500px;
+  left: -200px;
+  bottom: 0;
+}
+.right-1 {
+  top: 220px;
+  right: -50px;
+  bottom: 0;
+}
+.right-2 {
+  top: 400px;
+  right: 160px;
+  bottom: 0;
+}
+.right-3 {
+  top: 30px;
+  right: 90px;
+  bottom: 0;
+}
+.right-4 {
+  top: 500px;
+  right: -150px;
+  bottom: 0;
+}
+.right-5 {
+  top: 10px;
+  right: -180px;
+  bottom: 0;
+}
+.middle {
+  top: 530px;
+  right: 550px;
+  bottom: 0;
+}
+.hide {
+  display: none;
+}
+@keyframes shining {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 10px white;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* day */
+.container {
+  display: block;
+  position: absolute;
+  width: 50rem;
+  height: 35rem;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.c-window {
+  display: block;
+  position: relative;
+  width: 235px;
+  height: 235px;
+  margin: 0 auto;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  background: #5ddfe8;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transition: background 1s ease-in-out;
+}
+.c-window .sun {
+  display: block;
+  position: relative;
+  top: 18px;
+  left: 30px;
+  height: 40px;
+  width: 40px;
+  background: #ffee94;
+  border-radius: 100%;
+  margin: 0 auto;
+  box-shadow: 0px 0px 40px #ffee94;
+  transition: top 0.5s ease-in-out;
+}
+.c-window .moon {
+  position: relative;
+  height: 28px;
+  width: 28px;
+  top: 200px;
+  background: #eee;
+  border-radius: 100%;
+  box-shadow: 0px 0px 20px #fff;
+  transition: top 0.5s ease-in-out;
+}
+.c-window .cat {
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  height: 140px;
+  width: 135px;
+  margin: 0 50px;
+  background: #777;
+  transition: bottom 0.25s ease-in-out;
+}
+.c-window .cat::before {
+  width: 0;
+  height: 0;
+  border-left: 0px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 20px solid #777;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  content: "";
+}
+.c-window .cat::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 0px solid transparent;
+  border-left: 30px solid transparent;
+  border-bottom: 20px solid #777;
+  position: absolute;
+  top: -20px;
+  right: 0px;
+}
+.c-window .cat:hover {
+  display: block;
+  position: absolute;
+  bottom: -40px;
+  cursor: pointer;
+}
+.c-window .cat .eyes {
+  display: block;
+  position: absolute;
+  bottom: 80px;
+  background: #ffee94;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+}
+.c-window .cat:hover .eyes {
+  display: block;
+  position: absolute;
+  height: 8px;
+  width: 40px;
+  bottom: 100px;
+}
+.c-window .cat .eyes.left {
+  left: 12px;
+}
+.c-window .cat .eyes.right {
+  right: 12px;
+}
+.c-window .cat .eyes .pupil {
+  display: block;
+  position: relative;
+  background: #ffb399;
+  height: 100%;
+  width: 5px;
+  border-radius: 100%;
+  margin: 0 auto;
+  transition: width 0.5s ease-in-out;
+}
+.c-window .cat .nose {
+  display: block;
+  position: relative;
+  top: 45px;
+  background: #ffb399;
+  height: 11px;
+  width: 11px;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+input[type="checkbox"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+input#toggle[type="checkbox"] {
+  display: none;
+}
+label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 40px;
+  width: 120px;
+  display: block;
+  z-index: 9999;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.switch {
+  display: block;
+  position: relative;
+  border-bottom: 1px solid #fff;
+  border-radius: 25px;
+  background: #ffe2d8;
+  box-shadow: inset 0 0 10p rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+  height: 40px;
+  width: 100px;
+  margin: 0px auto 30px auto;
+}
+.switch .button {
+  display: block;
+  position: absolute;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #aaa;
+  border-radius: 100%;
+  background: #ffcfbf;
+  height: 32px;
+  width: 32px;
+  top: 4px;
+  left: 4px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+.switch .button .b-inside {
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  border: 1px solid #888;
+  border-radius: 100%;
+  background: #ffee94;
+  height: 15px;
+  width: 15px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+.day-night-cont {
+  display: block;
+  position: absolute;
+  width: 180px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 40px;
+  top: 0px;
+}
+.day-night-cont .sun {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: #ffee94;
+  box-shadow: 0px 0px 40px #ffee94;
+}
+.day-night-cont .moon {
+  display: block;
+  position: absolute;
+  right: 8px;
+  top: 10px;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: #eee;
+  box-shadow: 0px 0px 5px #eee;
+}
+.day-night-cont .moon .moon-inside {
+  display: block;
+  position: absolute;
+  left: 8px;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: #5ddfe8;
+}
+
+/* toggle */
+.switch .button {
+  transition: left 0.25s ease-in-out;
+  -webkit-transition: left 0.25s ease-in-out;
+}
+input[type="checkbox"]:checked ~ .switch .button {
+  position: absolute;
+  left: 64px;
+}
+/* Night Animation */
+input[type="checkbox"]:checked ~ .c-window {
+  background: #111;
+  border: 1px solid #fff;
+}
+input[type="checkbox"]:checked ~ .c-window .sun {
+  top: 200px;
+}
+input[type="checkbox"]:checked ~ .c-window .moon {
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  top: 40px;
+  left: 60px;
+}
+input[type="checkbox"]:checked ~ .c-window .cat {
+  background: #444;
+}
+input[type="checkbox"]:checked ~ .c-window .cat::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 0px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 20px solid #444;
+}
+input[type="checkbox"]:checked ~ .c-window .cat::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: 0px solid transparent;
+  border-left: 30px solid transparent;
+  border-bottom: 20px solid #444;
+}
+input[type="checkbox"]:checked ~ .c-window .cat .eyes .pupil {
+  height: 90%;
+  width: 34px;
+  margin: 5% auto;
+}
+input[type="checkbox"]:checked ~ .c-window .cat:hover .eyes {
+  height: 40px;
+  bottom: 80px;
+}
+@media (max-width: 500px) {
+  .container {
+    min-height: 100vh;
+    margin-top: 10rem;
+  }
+}

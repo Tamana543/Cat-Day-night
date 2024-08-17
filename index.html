@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cooded by Tamana Farzami" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cat day and night</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="stars hide">
+        <div class="star left-1"></div>
+        <div class="star left-2"></div>
+        <div class="star left-3"></div>
+        <div class="star left-4"></div>
+        <div class="star left-5"></div>
+        <div class="star left-6"></div>
+        <div class="star right-1"></div>
+        <div class="star right-2"></div>
+        <div class="star right-3"></div>
+        <div class="star right-4"></div>
+        <div class="star right-5"></div>
+
+        <div class="star middle"></div>
+      </div>
+      <input type="checkbox" id="toggle" />
+      <label for="toggle"></label>
+      <div class="day-night-cont">
+        <span class="sun"> </span>
+        <div class="moon">
+          <span class="moon-inside"></span>
+        </div>
+      </div>
+      <div class="switch">
+        <div class="button">
+          <div class="b-inside"></div>
+        </div>
+      </div>
+      <div class="c-window">
+        <span class="sun"></span>
+        <span class="moon"></span>
+        <div class="cat">
+          <div class="cat-face">
+            <section class="eyes left"><span class="pupil"></span></section>
+            <section class="eyes right"><span class="pupil"></span></section>
+            <span class="nose"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("toggle").addEventListener("click", function () {
+        document.querySelector(".stars").classList.toggle("hide");
+        document.querySelector("body").classList.toggle("bo-night");
+      });
+    </script>
+  </body>
+</html>
